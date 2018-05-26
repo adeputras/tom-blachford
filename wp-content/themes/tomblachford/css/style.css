@@ -338,7 +338,7 @@ a img.aligncenter {
   /* width: 100%;*/ /* width before rotation! */
   top: 50%;
   height: 2px; /* actual text will overlap! */
-  margin-top: -1px; /* subtract half the height */
+  margin-top: 5px; /* subtract half the height */
   line-height: 0px; /* centre the text on the base line */
   text-align: center;
   left: 28px;
