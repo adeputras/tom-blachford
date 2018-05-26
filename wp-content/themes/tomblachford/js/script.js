@@ -87,15 +87,18 @@
       }, 100);
     }
 
-    // function mainHeight() {
-    //   var headerHeight = $('#header').outerHeight();
-    //   var footerHeight = $('#footer').outerHeight();
-    //   var winHeight = $(window).height();
-    //   var main = winHeight - headerHeight - footerHeight;
-    //   $('.home #main,.home .home-image').css({
-    //     height: main
-    //   })
-    // }mainHeight()
+    function mainHeight() {
+      var headerHeight = $('#header').outerHeight();
+      var footerHeight = $('#footer').outerHeight();
+      var winHeight = $(window).height();
+      var main = winHeight - headerHeight - footerHeight;
+      $('.home .home-image').css({
+        height: main
+      })
+    }mainHeight();
+    $( window ).resize(function() {
+      mainHeight();
+    });
   });
 
 })(jQuery);
