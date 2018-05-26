@@ -438,7 +438,7 @@ a img.aligncenter {
   }
   .home-left h2,
   .home-right h2{
-    font-size: 1.2em;
+    font-size: 1.4em;
   }
   .home-left h2 {
     left: 40px;
@@ -463,4 +463,8 @@ a img.aligncenter {
   }
 }
 @media (max-width: 320px) {
+  .home-left h2,
+  .home-right h2{
+    font-size: 1.1em;
+  }
 }
