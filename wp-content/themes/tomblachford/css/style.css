@@ -10,7 +10,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
 /*General*/
 
 body {
@@ -439,7 +438,7 @@ a img.aligncenter {
   }
   .home-left h2,
   .home-right h2{
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
   .home-left h2 {
     left: 40px;
