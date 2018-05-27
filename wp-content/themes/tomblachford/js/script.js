@@ -93,7 +93,6 @@
     // Home Main Height
     function mainHeight() {
       var headerHeight = $("#header").height();
-      console.log(headerHeight);
       var footerHeight = $("#footer").outerHeight();
       var winHeight = $(window).height();
       var main = winHeight - headerHeight - footerHeight;
@@ -132,7 +131,7 @@
     });
 
     // Change svg color inside img tag
-    $("img.svg").each(function () {
+    $(".svg").each(function () {
       var $img = $(this);
       var imgID = $img.attr("id");
       var imgClass = $img.attr("class");
