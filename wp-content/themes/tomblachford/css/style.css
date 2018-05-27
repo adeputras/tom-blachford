@@ -514,7 +514,7 @@ a img.aligncenter {
   top: 50%;
   height: 2px;
   /* actual text will overlap! */
-  margin-top: 5px;
+  margin-top: 2px;
   /* subtract half the height */
   line-height: 0px;
   /* centre the text on the base line */
