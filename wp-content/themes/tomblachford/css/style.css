@@ -745,6 +745,11 @@ a img.aligncenter {
 #footer p {
   font-size: 10px;
   margin-bottom: 0;
+  color: #b3b3b3;
+}
+
+#footer .row {
+  align-items: center;
 }
 
 #footer .svg {
@@ -814,6 +819,9 @@ a img.aligncenter {
   }
   .commisioned-project li {
     flex: 0 100%;
+  }
+  .commisioned-project li:last-child {
+    margin-bottom: 0;
   }
   .commisioned-project li:nth-child(odd),
   .commisioned-project li:nth-child(even) {
