@@ -820,7 +820,8 @@ a img.aligncenter {
   .commisioned-project li {
     flex: 0 100%;
   }
-  .commisioned-project li:last-child {
+  .commisioned-project li:last-child,
+  .page-art #main li:last-child .art-project {
     margin-bottom: 0;
   }
   .commisioned-project li:nth-child(odd),
