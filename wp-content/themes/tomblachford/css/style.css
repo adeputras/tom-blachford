@@ -810,11 +810,10 @@ a img.aligncenter {
 
 @media (max-width: 575px) {
   .commisioned-project-list {
-    height: calc(100vw / 2);
+    height: calc(100vw / 2 + 10.5vw);
   }
   .commisioned-project li {
     flex: 0 100%;
-    margin-bottom: 15px;
   }
   .commisioned-project li:nth-child(odd),
   .commisioned-project li:nth-child(even) {
