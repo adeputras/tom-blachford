@@ -1274,6 +1274,9 @@ padding-top: 30px;
 }
 
 @media (max-width: 767px) {
+  .project-slider .slide{
+    height: calc(100vh - 160px)!important;
+  }
   .project-slider p {
     padding-right: 0;
 }
