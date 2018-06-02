@@ -178,11 +178,9 @@
     var $slickElement = $('.project-slider');
     var $imgSlide = $('.project-slider .slide').height() - $('.slide-content p').height()
     $slickElement.on('init reInit beforeChange', function(event, slick, currentSlide, nextSlide){
-      if ($(window).width() > 767) {
         $('.slide-content img').css({
           maxHeight: $imgSlide
         })
-      }
     });
     $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
       //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
@@ -199,11 +197,11 @@
     $(window).on('orientationchange', function() {
       $slickElement.slick('resize');
       $slickElement.on('init reInit beforeChange', function(event, slick, currentSlide, nextSlide){
-        if ($(window).width() > 767) {
+  
           $('.slide-content img').css({
             maxHeight: $imgSlide
           })
-        }
+
       });
     });
   });
