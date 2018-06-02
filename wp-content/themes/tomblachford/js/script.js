@@ -97,7 +97,7 @@
       var winHeight = $(window).height();
       var direction = $('.group-direction').height();
       var main = winHeight - headerHeight - footerHeight;
-      var slideHeight = winHeight - headerHeight - footerHeight - direction;
+      var slideHeight = winHeight - headerHeight - footerHeight - 10;
       var heightMobile = winHeight - headerHeight - 100;
       $(".home .home-image").css({
         height: main
@@ -176,11 +176,19 @@
     // Project Slider
     var $status = $('.pagination-info');
     var $slickElement = $('.project-slider');
-
+    var $imgSlide = $('.project-slider .slide').height() - $('.slide-content p').height()
+    $slickElement.on('init reInit beforeChange', function(event, slick, currentSlide, nextSlide){
+      if ($(window).width() > 767) {
+        $('.slide-content img').css({
+          maxHeight: $imgSlide
+        })
+      }
+    });
     $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
       //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
       var i = (currentSlide ? currentSlide : 0) + 1;
       $status.text(i + '/' + slick.slideCount);
+      
     });
 
     $slickElement.slick({
@@ -188,6 +196,15 @@
       prevArrow: $('.group-direction .prev-arrow'),
       nextArrow: $('.group-direction .next-arrow')
     });
-
+    $(window).on('orientationchange', function() {
+      $slickElement.slick('resize');
+      $slickElement.on('init reInit beforeChange', function(event, slick, currentSlide, nextSlide){
+        if ($(window).width() > 767) {
+          $('.slide-content img').css({
+            maxHeight: $imgSlide
+          })
+        }
+      });
+    });
   });
 })(jQuery);
