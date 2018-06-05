@@ -97,24 +97,14 @@
       var winHeight = $(window).height();
       var direction = $('.group-direction').height();
       var main = winHeight - headerHeight - footerHeight;
-      var slideHeight = winHeight - headerHeight - footerHeight - 10;
-      var heightMobile = winHeight - headerHeight - 100;
       $(".home .home-image").css({
         height: main
       });
-      if ($(window).width() < 768) {
-        $(".project-slider .slide").css({
-          height: heightMobile
-        })
-      } else {
-        $(".project-slider .slide").css({
-          height: slideHeight
-        })
-      }
+
       $(window).scroll(function () {
         if ($(window).scrollTop() > 20 && $(window).width() < 768) {
           $("#header").css({
-            backgroundColor: "#181409"
+            backgroundColor: "#616161"
           });
           $("#header").addClass("light")
         } else {
@@ -176,14 +166,6 @@
     // Project Slider
     var $status = $('.pagination-info');
     var $slickElement = $('.project-slider');
-    var $imgSlide = $('.project-slider .slide').height() - $('.slide-content p').height()
-    $slickElement.on('init reInit beforeChange', function(event, slick, currentSlide, nextSlide){
-      if ($(window).width() > 767) {
-        $('.slide-content img').css({
-          maxHeight: $imgSlide
-        })
-      }
-    });
     $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
       //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
       var i = (currentSlide ? currentSlide : 0) + 1;
@@ -196,15 +178,12 @@
       prevArrow: $('.group-direction .prev-arrow'),
       nextArrow: $('.group-direction .next-arrow')
     });
-    $(window).on('orientationchange', function() {
-      $slickElement.slick('resize');
-      $slickElement.on('init reInit beforeChange', function(event, slick, currentSlide, nextSlide){
-        if ($(window).width() > 767) {
-          $('.slide-content img').css({
-            maxHeight: $imgSlide
-          })
-        }
-      });
+    
+    var $carousel = $('.project-slider');
+    $(document).on('keydown', function(e) {
+      if(e.keyCode == 37) $carousel.slick('slickPrev');
+      if(e.keyCode == 39) $carousel.slick('slickNext');
     });
+
   });
 })(jQuery);
