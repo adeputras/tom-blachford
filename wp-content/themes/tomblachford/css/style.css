@@ -1317,7 +1317,7 @@ a img.aligncenter {
     padding-top: 60px;
   }
   .home #main {
-    padding-top: 60px;
+    padding-top: 60px!important;
   }
   /* Header */
   .main-menu li a {
@@ -1412,6 +1412,11 @@ a img.aligncenter {
   #footer p {
     font-size: 11px;
   }
+  /* Home Main */
+  .home-left h2,
+  .home-right h2 {
+    font-size: 1.1em;
+  }
 }
 
 @media (max-width: 320px) {
@@ -1419,9 +1424,11 @@ a img.aligncenter {
   .logo {
     width: 8em;
   }
-  /* Home Main */
-  .home-left h2,
-  .home-right h2 {
-    font-size: 1.1em;
+
+}
+@media (max-height: 600px) and (max-width: 767px){
+
+  .project-slider img {
+      max-height: calc(100vh - 200px)!important;
   }
 }
